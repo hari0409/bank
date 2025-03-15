@@ -83,7 +83,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <image>
-                        <name>bank/${project.artifactId}:latest</name>
+                        <name>201301401/${project.artifactId}</name>
                     </image>
                 </configuration>
             </plugin>

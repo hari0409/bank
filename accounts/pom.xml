@@ -88,7 +88,7 @@
                 <version>3.4.4</version>
                 <configuration>
                 <to>
-                    <image>bank/${project.artifactId}</image>
+                    <image>201301401/${project.artifactId}</image>
                 </to>
                 </configuration>
             </plugin>

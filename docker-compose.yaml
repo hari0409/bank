@@ -1,0 +1,39 @@
+services:
+  acccounts:
+    image: "201301401/accounts"
+    container_name: accounts-ms
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - bank
+  cards:
+    image: "201301401/cards"	
+    container_name: cards-ms
+    ports:
+      - "9000:9000"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - bank
+  loans:
+    image: "201301401/loans"
+    container_name: loans-ms
+    ports:
+      - "8090:8090"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - bank
+networks:
+  bank:
+    driver: "bridge"
+
+
