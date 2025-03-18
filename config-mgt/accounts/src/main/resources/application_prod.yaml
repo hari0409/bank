@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile:
+      - "prod"
+
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to the Bank Service. This is the Account MS: Prod"
+  contactDetails: 
+    name: "Bank Manager: Prod"
+    email: "bankManager@bank.com"
+  onCallSupport:
+    - 1234567890
+    - 0987654321
