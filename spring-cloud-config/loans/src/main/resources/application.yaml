@@ -1,6 +1,14 @@
 server:
   port: 8090
 spring:
+  application:
+    name: accounts
+  profiles:
+    active:
+    - "qa" # Activate this profile by default
+  config:
+    import:
+    - "optional:configserver:http://localhost:8071/" # Must be "configserver" no matter what
   datasource:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -14,23 +22,3 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-  config:
-    import:
-    - "application_qa.yaml"
-    - "application_prod.yaml"
-
-build:
-  value: 2.3
-
-loans:
-  description: "This is a Loan MS which is a part of the Bank Appn: Local"
-  owner:
-    name: "Riyasshri"
-    email: "riya@gmail.com"
-  mobile:
-    - 1234567890
-    - 2345678901
-
-logging:
-  level: 
-    root: DEBUG

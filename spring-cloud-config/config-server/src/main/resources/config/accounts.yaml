@@ -1,0 +1,11 @@
+build:
+  version: "3.0"
+
+accounts:
+  message: "Welcome to the Bank Service. This is the Account MS: Local"
+  contactDetails: 
+    name: "Bank Manager: Local"
+    email: "bankManager@bank.com"
+  onCallSupport:
+    - 1234567890
+    - 0987654321
