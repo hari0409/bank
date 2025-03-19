@@ -5,10 +5,16 @@ spring:
     name: configserver
   profiles:
     active:
-    - native 
+    - git 
   cloud:
     config:
       server:
-        native:
-          search-locations:
-          - "classpath:/config"
+        git:
+          uri: https://github.com/eazybytes/eazybytes-config.git # Repo URL
+          default-label: main # Branch
+          timeout: 5 # Time to wait for the request to complete
+          clone-on-start: true # Else cloned on first request 
+          force-pull: true # Override all the local changes 
+
+encrypt:
+  key: "45D81EC1EF61DF9AD8D3E5BB397F9"
