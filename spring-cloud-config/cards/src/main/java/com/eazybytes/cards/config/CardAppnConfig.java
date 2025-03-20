@@ -5,6 +5,14 @@ import java.util.Map;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @ConfigurationProperties("cards")
-public record CardAppnConfig(String description, Map<String, String> owner, List<Long> mobile) {
+@Setter
+@Getter
+public class CardAppnConfig {
+    private String message;
+    private Map<String, String> contactDetails;
+    private List<String> onCallSupport;
 }

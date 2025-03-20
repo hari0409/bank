@@ -44,7 +44,7 @@ public class CardsController {
 
         private ICardsService iCardsService;
 
-        @Value("${build.value}")
+        @Value("${build.version}")
         public String appnBuildInfo;
 
         public Environment environment;

@@ -44,7 +44,7 @@ public class LoansController {
 
         private ILoansService iLoansService;
 
-        @Value("${build.value}")
+        @Value("${build.version}")
         private String appnBuildInfo;
 
         private Environment environment;

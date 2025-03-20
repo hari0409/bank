@@ -5,7 +5,7 @@ spring:
     name: accounts
   profiles:
     active:
-    - "qa" # Activate this profile by default
+    - "prod" # Activate this profile by default
   config:
     import:
     - "optional:configserver:http://localhost:8071/" # Must be "configserver" no matter what
@@ -22,3 +22,15 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
