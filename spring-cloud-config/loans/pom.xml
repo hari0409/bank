@@ -104,7 +104,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <image>
-                        <name>201301401/${project.artifactId}:config</name>
+                        <name>201301401/${project.artifactId}:s6</name>
                     </image>
                 </configuration>
             </plugin>

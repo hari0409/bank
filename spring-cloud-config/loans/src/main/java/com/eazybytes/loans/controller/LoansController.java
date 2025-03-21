@@ -49,12 +49,12 @@ public class LoansController {
 
         private Environment environment;
 
-        @Autowired
         private LoanAppnConfig loanAppnConfig;
 
-        public LoansController(ILoansService iLoansService, Environment environment) {
+        public LoansController(ILoansService iLoansService, Environment environment,LoanAppnConfig loanAppnConfig) {
                 this.iLoansService = iLoansService;
                 this.environment = environment;
+                this.loanAppnConfig=loanAppnConfig;
         }
 
         @Operation(summary = "Create Loan REST API", description = "REST API to create new loan inside EazyBank")

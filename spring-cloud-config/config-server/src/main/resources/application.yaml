@@ -10,7 +10,7 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:hari0409/eazybytes-config.git # Repo URL
+          uri: https://github.com/hari0409/eazybytes-config.git # Repo URL
           default-label: main # Branch
           timeout: 5 # Time to wait for the request to complete
           clone-on-start: true # Else cloned on first request 
@@ -30,3 +30,12 @@ management:
       exposure:
         include:
         - "*"
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
