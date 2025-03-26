@@ -4,7 +4,7 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_DATABASE: accountsdb
+      MYSQL_DATABASE: accountsdb 
     extends:
       file: common-config.yaml
       service: microservice-db-config
