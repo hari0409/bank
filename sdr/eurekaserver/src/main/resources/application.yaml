@@ -1,0 +1,48 @@
+# Profile Configuration
+spring:
+  application:
+    name: eurekaserver
+  profiles:
+    active:
+    - default
+  config:
+    import:
+    - "optional:configserver:http://localhost:8071/"
+
+# Actuator Endpoint Configuration 
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+    
+# Port Configuration
+server:
+  port: 8070
+
+# Eureka Configuration Server
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    # To fetch the registry of other Micro-Services
+    # False for Eureka Server itself
+    # True for other Services
+    fetch-registry: false 
+    # To Register the instance with Eureka
+    # False for Eureka Server itself
+    # True for other Services
+    register-with-eureka: false
+    # URL that needs to be exposed to be allowing connection from other services.
+    service-url:
+        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

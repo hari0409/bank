@@ -11,26 +11,20 @@ spring:
           # search-locations: "classpath:/config"
           # search-locations: "file:///Users//eazybytes//Documents//config"
         git:
-          uri: "https://github.com/eazybytes/eazybytes-config.git"
+          uri: "https://github.com/hari0409/eazybytes-config.git"
           default-label: main
           timeout: 5
           clone-on-start: true
           force-pull: true
-  rabbitmq:
-    host: "localhost"
-    port: 5672
-    username: "guest"
-    password: "guest"
-
 management:
   endpoints:
     web:
       exposure:
         include: "*"
   health:
-    readiness-state:
+    readinessstate:
       enabled: true
-    liveness-state:
+    livenessstate:
       enabled: true
   endpoint:
     health:
