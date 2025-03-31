@@ -16,7 +16,7 @@ db:
 		echo "Waiting for MySQL to be ready..."; \
 		sleep 2; \
 	done
-	docker exec -it springboot-mysql mysql -u root -padmin -e "CREATE DATABASE accountsDB; CREATE DATABASE loansDB; CREATE DATABASE cardsDB;"
+	docker exec -it springboot-mysql mysql -u root -padmin -e "CREATE DATABASE database1; CREATE DATABASE database1; CREATE DATABASE database1;"
 
 # Target to stop the Docker container
 stop_db:

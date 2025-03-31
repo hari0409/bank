@@ -1,0 +1,47 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: "cards"
+  profiles:
+    active: "prod"
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+  endpoint:
+    shutdown:
+      access: unrestricted
+info:
+  app:
+    name: "Cards"
+    description: "Sample Cards Description"
+    version: "1.0.2"
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true 
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8070/eureka
