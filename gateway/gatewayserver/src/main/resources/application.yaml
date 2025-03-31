@@ -1,0 +1,49 @@
+# Port Config
+server:
+  port: 8072
+
+# Profile Config
+spring:
+  application:
+    name: "gatewayserver" 
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+# Gateway Config
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+# Actuator Config
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# Enable Gateway Endpoint 
+  endpoint:
+    gateway:
+      access: unrestricted
+# Enable Info ENV Endpoint
+  info:
+    env:
+      enabled: true
+
+# Configure Info Env
+info:
+  app:
+    name: "gatewayserver"
+    description: "Eazy Bank Gateway Server Application"
+    version: "1.0.0"
+
+# Eureka Config
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: "http://localhost:8070/eureka/"
