@@ -30,6 +30,14 @@ management:
   endpoint:
     shutdown:
       access: UNRESTRICTED
+    health:
+      probes:
+        enabled: true
+  health:
+    readinessstate:
+      enabled: true
+    livenessstate:
+      enabled: true
   info:
     env:
       enabled: true
@@ -48,3 +56,9 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8070/eureka
+
+logging:
+  level:
+    com:
+      eazybytes:
+        accounts: DEBUG

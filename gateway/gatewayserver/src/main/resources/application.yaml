@@ -13,7 +13,7 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true
+          # enabled: true 
           lower-case-service-id: true
 
 # Actuator Config
@@ -47,3 +47,9 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: "http://localhost:8070/eureka/"
+  
+logging:
+  level:
+    com:
+      example:
+        gatewayserver: DEBUG

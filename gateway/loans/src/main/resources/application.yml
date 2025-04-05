@@ -32,6 +32,14 @@ management:
   endpoint:
     shutdown:
       access: unrestricted
+    health:
+      probes:
+        enabled: true
+  health:
+    readinessstate:
+      enabled: true
+    livenessstate:
+      enabled: true
 info:
   app:
     name: "loans"
@@ -45,3 +53,9 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8070/eureka
+
+logging:
+  level:
+    com:
+      eazybytes:
+        loans: DEBUG

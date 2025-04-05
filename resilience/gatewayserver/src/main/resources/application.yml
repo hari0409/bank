@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: "gatewayserver"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lowerCaseServiceId: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      access: unrestricted
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: "gatewayserver"
+    description: "Eazy Bank Gateway Server Application"
+    version: "1.0.0"
+
+logging:
+  level:
+    com:
+      eazybytes:
+        gatewayserver: DEBUG
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      # Default Config for all the Circuit Breaker
+      default: 
+        # Number of request to monitor to take any decision
+        sliding-window-size: 10 
+        # Number of request in HALF_OPEN state
+        permitted-number-of-calls-in-half-open-state: 2
+        # Threshold of Failure 
+        failure-rate-threshold: 50 
+        # Time to wait in the OPEN state
+        wait-duration-in-open-state: 10000
